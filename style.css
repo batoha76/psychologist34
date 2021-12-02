@@ -36,7 +36,7 @@ font-weight: 200;
  top: 0;
  right: -50%;
  transition: right .2s;
- z-index: 2;
+ z-index: 5;
  -webkit-transform: translateZ(0);
  -webkit-backface-visibility: hidden;
  }
