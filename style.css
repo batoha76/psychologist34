@@ -108,6 +108,7 @@ font-weight: 200;
     margin-top: 230px; 
     line-height: 200px; /*межстрочный интерал в меню*/
     margin-right: 50px; 
+    z-index: 5;
 }
  /*КОНЕЦ ВЫЕЗЖАЮЩЕГО МЕНЮ*/
 
