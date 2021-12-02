@@ -169,6 +169,7 @@ body {
         '...  ...  ...' 0.23fr
         'h_p  h_p  h_p' 1fr
         /1fr  512px 1fr;
+        z-index: 0;
     }
         .hi_img{
             grid-area: h_i;
