@@ -95,7 +95,7 @@ font-weight: 200;
  -webkit-transform: rotate(45deg);
  top: 58px; /*настройка перекрестия*/
  background-color: #fff;
-     z-index: 5;
+     z-index: 5; /* УБРАЛ БАГ В САФАРИ*/
  }
  .hidden-menu-ticker:checked ~ .btn-menu span.second {
  opacity: 0;
@@ -104,7 +104,7 @@ font-weight: 200;
  -webkit-transform: rotate(-45deg);
  top: 12px;
  background-color: #fff;
-     z-index: 5;
+     z-index: 5; /* УБРАЛ БАГ В САФАРИ*/
  }
  #x1 { font-size: 3rem;
     margin-top: 230px; 
