@@ -18,7 +18,7 @@ body { background-attachment: fixed; /*реподвижный фон*/
  font-size: 3rem;
 /*неподвижный фон*/
  background-size: 101%;
- z-index: 5;
+ z-index: 5; /* внес чтобы исправить баг в САФАРИ*/
 }
  /*стилизуем менюшку*/
  .hidden-menu {
@@ -183,6 +183,7 @@ body {
             color: blue;
             margin: 10px 0 10px 0;
             letter-spacing: .5rem; /*расстояние между буквами*/
+            z-index: 1; /* чтобы исправить баг в САФАРИ*/
         }
                 /*начало эффекта надписей*/
         .focus-in-contract-bck {
