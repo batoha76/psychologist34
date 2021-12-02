@@ -54,6 +54,7 @@ font-weight: 200;
  /*общие стили значка-гамбургера, самого лэйбла*/
  .btn-menu {
  color: black;/*rgb(255, 255, 255);*/
+ background-color: rgb(155, 151, 151), 155);  /*?????*/
  /* НЕ НУЖНО??? background-color: rgb(155, 151, 151), 155);*/
  padding: 2px;
  position: fixed;
