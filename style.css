@@ -18,7 +18,7 @@ body { background-attachment: fixed; /*реподвижный фон*/
  font-size: 3rem;
 /*неподвижный фон*/
  background-size: 101%;
- z-index: 5; /* внес чтобы исправить баг в САФАРИ*/
+ z-index: 2; /* внес чтобы исправить баг в САФАРИ*/
 }
  /*стилизуем менюшку*/
  .hidden-menu {
