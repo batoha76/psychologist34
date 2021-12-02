@@ -183,7 +183,7 @@ body {
             color: blue;
             margin: 10px 0 10px 0;
             letter-spacing: .5rem; /*расстояние между буквами*/
-            z-index: 1; /* чтобы исправить баг в САФАРИ*/
+            z-index: 0; /* чтобы исправить баг в САФАРИ*/
         }
                 /*начало эффекта надписей*/
         .focus-in-contract-bck {
