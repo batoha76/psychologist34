@@ -109,6 +109,7 @@ font-weight: 200;
     margin-top: 230px; 
     line-height: 200px; /*межстрочный интерал в меню*/
     margin-right: 50px; 
+    z-index: 10;
 }
  /*КОНЕЦ ВЫЕЗЖАЮЩЕГО МЕНЮ*/
 
@@ -170,7 +171,6 @@ body {
         '...  ...  ...' 0.23fr
         'h_p  h_p  h_p' 1fr
         /1fr  512px 1fr;
-        z-index: -10;
     }
         .hi_img{
             grid-area: h_i;
