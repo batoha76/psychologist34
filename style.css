@@ -187,9 +187,6 @@ body {
             .hi_p p {
                 margin: 0; /*пришлось указать явно*/
             }
-                .hi_p_bug {
-                    z-index: -10;
-                }
                 /*начало эффекта надписей*/
         .focus-in-contract-bck {
             -webkit-animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
