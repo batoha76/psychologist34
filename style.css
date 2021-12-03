@@ -183,6 +183,7 @@ body {
             text-align: center;
             color: blue;
             letter-spacing: .5rem; /*расстояние между буквами*/
+            z-index: -10;
         }
             .hi_p p {
                 margin: 0; /*пришлось указать явно*/
