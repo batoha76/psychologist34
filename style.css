@@ -115,7 +115,7 @@ body {
     font-family: "oswald", "pangolin", "balsamiq", "pacifico", "lobster", "19689", Times, serif;
     /*font-family: monospace; inherit; serif; monospace; sans-serif;*/
     background-image: url(img/7cf9c6f9322c66858671bc04264c1e1f.jpg);
-    font-size: 2rem; /*было 4*/
+    font-size: 1rem; /*было 4*/
     font-weight: 200; /*700*/
     letter-spacing: .2rem; /*расстояние между буквами*/
     display: grid;
