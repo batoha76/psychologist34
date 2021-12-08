@@ -406,7 +406,7 @@ body {
                 content: " \2741";
                 padding-right: 5vw; /*так стабильней расстояние*/
                 margin-left: -100px;
-                color:darkviolet;
+                color: crimson;
             }
             /*.consultationMAK::first-letter {
                 color: greenyellow;
