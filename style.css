@@ -117,7 +117,7 @@ body {
     background-image: url(img/7cf9c6f9322c66858671bc04264c1e1f.jpg);
     font-size: .5rem; /*было 4*/
     font-weight: 200; /*700*/
-    letter-spacing: .2rem; /*расстояние между буквами*/
+    letter-spacing: 3rem; /*расстояние между буквами*/
     display: grid;
     grid-template: 
     '. hat .' auto/*150px*/
