@@ -362,7 +362,7 @@ body {
             content: " \2741";
             padding-right: 5vw; /*так стабильней расстояние*/
             margin-left: -100px;
-            color: chartreuse;
+            color: crimson;
         }
         /*.game_flower2 li{
             margin: 0 50px 0 70px;
