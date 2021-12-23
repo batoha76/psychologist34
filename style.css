@@ -1,0 +1,1084 @@
+/*для телефона и десктопа в этом файле, разделены стенкой из # */
+
+@font-face { font-family: "19689"; src: url("fonts/19689.otf") ; }
+@font-face { font-family: "1488"; src: url("fonts/1488.ttf") ; }
+@font-face { font-family: "lobster"; src: url("fonts/Lobster-Regular.ttf") ; }
+@font-face { font-family: "pacifico"; src: url("fonts/Pacifico-Regular.ttf") ; }
+@font-face { font-family: "balsamiq"; src: url("fonts/BalsamiqSans-Regular.ttf") ; }
+@font-face { font-family: "pangolin"; src: url("fonts/Pangolin-Regular.ttf") ; }
+@font-face { font-family: "oswald"; src: url("fonts/Oswald-VariableFont_wght.ttf") ; }
+
+                /*ВЫЕЗЖАЮЩЕЕ МЕНЮ*/
+/* стили для боди, тут всё понятно */
+body { background-attachment: fixed; /*реподвижный фон*/
+   /*background-color: rgb(228, 228, 228);*/
+ margin: 0;
+ padding: 0;
+ /*font-family: Arial;*/
+ font-size: 3rem;
+/*неподвижный фон*/
+ background-size: 101%;
+}
+ /*стилизуем менюшку*/
+ .hidden-menu {
+font-weight: 200;
+ display: block;
+ position: fixed;
+ list-style:none;
+ padding: 10px;
+ margin: 0;
+ box-sizing: border-box;
+ width: 50%;
+ background-color: black/*#2b343c*/;
+ opacity: 0.8;
+ height: 100%;
+ top: 0;
+ right: -50%;
+ transition: right .2s;
+ z-index: 2;
+ -webkit-transform: translateZ(0);
+ -webkit-backface-visibility: hidden;
+ }
+ .hidden-menu li a {
+     text-decoration: none;
+     color:#cacaca;
+     margin-left: 40px;
+     padding-bottom: -200px;
+     line-height: 30px;
+}
+ .hidden-menu li a:hover {color:#fff;}
+ /*скрываем инпут чекбокс*/
+ .hidden-menu-ticker {
+ display: none;
+ }
+ /*общие стили значка-гамбургера, самого лэйбла*/
+ .btn-menu {
+ color: rgb(255, 255, 255); /*на что влияет??? писал black ничего не изменилось*/
+ /*background-color: rgb(155, 151, 151);  ???*/
+ padding: 2px;
+ position: fixed;
+ top: -7px; /*было 5*/
+ right: 120px;
+ cursor: pointer;
+ transition: right .23s;
+ z-index: 3;
+ width: 20px;
+ -webkit-transform: translateZ(0);
+ -webkit-backface-visibility: hidden;
+ }
+ /*общие стили полосок*/
+ .btn-menu span {
+ display: block;
+ height: 8px;
+ width: 7vw;
+ background-color: white;/* rgb(1, 255, 0); цвет полосок был white*/
+ margin: 15px 0 0;
+ transition: all .1s linear .23s;
+ position: relative;
+ margin-right: 60px;
+ }
+ /*прибиваем к верху лэйбла первую полоску*/
+ .btn-menu span.first {
+ margin-top: 50px;
+ }
+ /*при нажатии на бургер двигаем его и делаем другой фон бургеру*/
+ .hidden-menu-ticker:checked ~ .btn-menu {
+ right: 320px;
+ background-color: #2b343c;
+ }
+ /*и дальше стили меняющие бургер, двигающие менюшку по событию - нажатие на значек бургера*/
+ .hidden-menu-ticker:checked ~ .hidden-menu {
+ right: 0;
+ }
+ .hidden-menu-ticker:checked ~ .btn-menu span.first {
+ -webkit-transform: rotate(45deg);
+ top: 58px; /*настройка перекрестия*/
+ background-color: #fff;
+ z-index: 5; /* УБРАЛ БАГ В САФАРИ*/
+ }
+ .hidden-menu-ticker:checked ~ .btn-menu span.second {
+ opacity: 0;
+ }
+ .hidden-menu-ticker:checked ~ .btn-menu span.third {
+ -webkit-transform: rotate(-45deg);
+ top: 12px;
+ background-color: #fff;
+ z-index: 5; /* УБРАЛ БАГ В САФАРИ*/
+ }
+ #x1 { font-size: 3rem;
+    margin-top: 230px; 
+    line-height: 200px; /*межстрочный интерал в меню*/
+    margin-right: 50px; 
+}
+ /*КОНЕЦ ВЫЕЗЖАЮЩЕГО МЕНЮ*/
+
+ @media only screen  /*МЕДИА ЗАПРОС НА ВСЮ МОБИЛЬНУЮ ВЕРСТКУ*/
+ and (max-device-width : 479px) {
+body {
+    font-family: "oswald", "pangolin", "balsamiq", "pacifico", "lobster", "19689", Times, serif;
+    /*font-family: monospace; inherit; serif; monospace; sans-serif;*/
+    background-image: url(img/7cf9c6f9322c66858671bc04264c1e1f.jpg);
+    font-size: 3rem; /*было 4*/
+    font-weight: 200; /*700*/
+    letter-spacing: .2rem; /*расстояние между буквами*/
+    display: grid;
+    grid-template: 
+    '. hat .' auto/*150px*/
+    ". hi ." auto/*772px*/
+    '. ser .' auto
+    '. gam .' auto/*500px*/
+    '. g_p .' auto/*900px*/
+    '. con .' auto/*500px*/
+    '. foo .' auto/*500px*/
+    /0px 1fr 0px;
+}
+    .hat{
+        grid-area: hat;
+        position: fixed;
+        height: 150px;
+        width: 100vw;
+        /*background-color: grey;*/
+        background-color: rgb(53, 53, 53) ;
+        opacity: 0.8;
+        display: grid;
+        grid-template: 
+        '...    ...  ...  ...  ...' 1fr
+        '...    w_i  ...  owl  ...' 120px
+        '...    ...  ...  ...  ...' 1fr
+        /0.2fr  1fr  1fr  0.1fr  0.8fr;
+        z-index: 1; /*поверх всего*/
+
+    }
+        .whatsapp_img {
+            grid-area: w_i;
+        }
+            .whatsapp_img img {
+                height: 120px;
+            }
+        .owl {
+            grid-area: owl;
+        }
+            .owl img {
+                opacity: 0.8;
+                height: 120px;
+                margin-top: 7px;
+            }    
+
+    .hi{
+        grid-area: hi;
+        display: grid;
+        grid-template: 
+        '...  ...  ...' 0.6fr
+        '...  h_i  ...' 600px
+        '...  ...  ...' 0.23fr
+        'h_p  h_p  h_p' 1fr
+        /1fr  600px 1fr;
+    }
+        .hi_img{
+            grid-area: h_i;
+            width: 600px;
+            border-radius: 300px;
+        }
+        .hi_p{
+            font-weight: 300;
+            font-size: 6rem;
+            grid-area: h_p;
+            text-align: center;
+            color: blue;
+            letter-spacing: .5rem; /*расстояние между буквами*/
+        }
+            .hi_p p {
+                margin: 0; /*пришлось указать явно*/
+                line-height: 7.5rem; /*расстояние между строчками*/
+            }
+                /*начало эффекта надписей*/
+        .focus-in-contract-bck {
+            -webkit-animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                    animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                    margin: 5px 0 5px 0; /*добавил поля*/
+        }
+        @-webkit-keyframes focus-in-contract-bck {
+        0% {
+            letter-spacing: 1em;
+            -webkit-transform: translateZ(300px);
+                    transform: translateZ(300px);
+            -webkit-filter: blur(12px);
+                    filter: blur(12px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-transform: translateZ(12px);
+                    transform: translateZ(12px);
+            -webkit-filter: blur(0);
+                    filter: blur(0);
+            opacity: 1;
+        }
+        }
+        @keyframes focus-in-contract-bck {
+        0% {
+            letter-spacing: 1em;
+            -webkit-transform: translateZ(300px);
+                    transform: translateZ(300px);
+            -webkit-filter: blur(12px);
+                    filter: blur(12px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-transform: translateZ(12px);
+                    transform: translateZ(12px);
+            -webkit-filter: blur(0);
+                    filter: blur(0);
+            opacity: 1;
+        }
+        }
+        /*конец эффекта надписей*/
+
+    .services{
+        grid-area: ser;
+        background: rgba(64, 224, 208, .3);
+        border-radius: 30px;
+        margin: 30px;
+
+    }
+        .services p {
+            text-align: center;
+        }
+        .services li{
+            margin: 0 50px 0 50px;
+            list-style: none;
+        }
+        .services li::before {
+
+            content: " \2740";
+            padding-right: 4vw; /*так стабильней расстояние*/
+            margin-left: -100px;
+            color: crimson;
+        }
+    .game{
+        grid-area: gam;
+        background: rgba(64, 224, 208, .3);
+        /*background-image: url(img/pinterest3.jpg);*/
+        border-radius: 30px;
+        margin: 0 30px 30px 30px;
+        display: grid;
+        grid-template: 
+        'g_b   g_b   g_b' auto
+        '...   cbw   ...' auto
+        /1fr   1fr   1fr;
+
+    }
+        .game_body { 
+            grid-area: g_b;
+        }
+                /*СТРЕЛКА подвижная*/
+
+                .game_forArrow {
+                    grid-area: a_d;
+                    margin-left: 4vw;
+                    margin-top: -23vw; /*влияет на ВЫСОТУ всего блока*/
+                    padding-bottom: 15vw;
+                }
+                    .arrow-down {
+                        margin: 30px;
+                    }
+                    
+                    .arrow-down span {
+                        display: block;
+                        width: 20px; /*было 30*/
+                        height: 20px; /*было 30*/
+                        border-bottom: .8vw solid #337AB7;
+                        border-right: .8vw solid/* #337AB7*/;
+                        border-color: blue;
+                        transform: rotate(45deg);
+                        margin: -16px;
+                        animation: arrow-down 2s infinite;
+                    }
+                    .arrow-down span:nth-child(2){
+                        animation-delay: -0.2s;
+                    }
+                    .arrow-down span:nth-child(3){
+                        animation-delay: -0.4s;
+                    }
+                    @keyframes arrow-down {
+                        0%{
+                            opacity: 0;
+                            transform: rotate(45deg) translate(-20px,-20px);
+                        }
+                        50%{
+                            opacity: 1;
+                        }
+                        100%{
+                            opacity: 0;
+                            transform: rotate(45deg) translate(20px,20px);
+                        }
+                    }
+                /*КОНЕЦ СТРЕЛКИ*/
+        .game_heart li{
+            margin: 0 50px 0 70px;
+            list-style: none;
+        }
+        .game_heart li::before {
+            padding: 0 20px 0 20px;
+            content: " \2764"; /*2764  2665*/
+            padding-right: 6vw; /*так стабильней расстояние*/
+            margin-left: -120px;
+            color: crimson;
+        }
+        .game_flower li{
+            margin: 0 50px 0 70px;
+            list-style: none;
+        }
+        .game_flower li::before {
+
+            content: " \2741";
+            padding-right: 5vw; /*так стабильней расстояние*/
+            margin-left: -100px;
+            color:crimson;
+        }
+        /*
+        .game_flower2 {
+            height: 3rem;
+            padding-right: 1.5vw; так стабильней расстояние
+            margin-left: -100px;
+        }
+        .game_flower3 {
+            height: 3.5rem;
+            padding-right: 1.5vw;
+            margin-left: -75px;
+        }
+        .game_P_flower2 {
+            padding-left: 120px;
+        } */
+        .game_youWillGet {
+            display: grid;
+            grid-template:
+            'gyi1  gyp1' auto
+            'gyi2  gyp2' auto
+            'gyi3  gyp3' auto
+            /1fr   10fr ;
+            font-size: 3rem; /*прописал отдельнго, наверное это не нужно*/
+        }
+            .game_youWillGet_img1 {
+                grid-area: gyi1;
+                height: 3.5rem;
+                margin: 60px 0 0 40px;
+            }
+            .game_youWillGet_img2 {
+                grid-area: gyi2;
+                height: 3rem;
+                margin: 40px 0 0 35px;
+            }
+            .game_youWillGet_img3 {
+                grid-area: gyi3;
+                height: 3rem;
+                margin: 40px 0 0 35px;
+            }
+            .game_youWillGet_p1 {
+                grid-area: gyp1;
+                padding: 0 50px 0 25px;
+                margin: 48px 0 0 0;
+            }
+            .game_youWillGet_p2 {
+                grid-area: gyp2;
+                padding: 0 50px 0 25px;
+                margin: 1rem 0 0 0;
+            }
+            .game_youWillGet_p3 {
+                grid-area: gyp3;
+                padding: 0 50px 0 25px;
+                margin: 1rem 0 48px 0;
+            }
+        .game_message li {
+            margin: 0 50px 0 70px;
+            list-style: none;
+        }
+        .game_message li::before {
+
+            content: " \2764"; /*2764 2665*/
+            padding-right: 3.5vw; /*так стабильней расстояние*/
+            margin-left: -100px;
+            color: crimson;
+        }
+        .game_price li {
+            margin: 0 50px 0 70px;
+            list-style: none;
+        }
+        .game_price li::before {
+
+            content: " \2741";
+            padding-right: 5vw; /*так стабильней расстояние*/
+            margin-left: -100px;
+            color: crimson;
+        }
+        /*.game_flower2 li{
+            margin: 0 50px 0 70px;
+            list-style: url(img/flower3.png);
+        }*/
+
+    /*.games_price{
+        grid-area: g_p;
+        background-color: rgba(240, 248, 255, .3);
+        border-radius: 0px;
+        margin: 0 0px 30px 0px;
+
+    }
+        .games_price p {
+            margin-left: 100px;
+        }*/
+    .consultation{
+        grid-area: con;
+        background: rgba(64, 224, 208, .3); /* rgba(171, 245, 218, .5);*/
+        margin:30px;
+        border-radius: 30px;
+        display: grid;
+        grid-template: 
+        'c_t c_t c_t' auto
+        '... cbw ...' auto
+        /1fr 1fr 1fr;
+
+    }
+        .consultation_text {
+            grid-area: c_t;
+        }
+                /*СТРЕЛКА
+        остальные настройки смотри 
+        выше в разделе game*/
+        .consultation_forArrow {
+            grid-area: c_ar;
+            margin: -18vw 0 0 4vw; /*влияет на ВЫСОТУ всего блока*/
+            padding-bottom: 11vw;
+        } /*КОНЕЦ СТРЕЛКИ*/
+            .consultationMAK {
+                color: red;
+            }
+            .consultation li {
+                margin: 0 50px 0 70px;
+                list-style: none;
+            }
+            .consultation li::before {
+
+                content: " \2741";
+                padding-right: 5vw; /*так стабильней расстояние*/
+                margin-left: -100px;
+                color: crimson;
+            }
+            /*.consultationMAK::first-letter {
+                color: greenyellow;
+
+            }*/
+            /*  ВРЕМЕННО УБРАЛ "КНОПКУ ВАТСАП"
+            .consultation_recording {
+                height: 8rem;
+                margin: 2rem 4rem 2rem 4rem;
+                background-color:mediumseagreen;
+                border-radius: 30px;
+            }
+                .consultatio_text_button {
+                    padding-left: 20px;
+                    margin-bottom: 10px;
+                }  */
+    /*КНОПКА*/            
+        .buttonWhatsApp {
+            grid-area: cbw;
+            margin: 3rem;
+        }
+        .buttonWhatsApp a {
+            text-decoration: none;
+        }
+            .button {
+                width: 80vw;
+                border-radius: 30px;
+                font-size: 2rem;
+                /*margin-bottom: 3rem;*/
+                background-color: rgb(67, 216, 84);
+                height: 100px;
+                display: grid;
+                grid-template:
+                '...   ...   ...   ...   ...' 1fr
+                '...   cbi   ...   cbt   ...' 10fr
+                '...   ...   ...   cbt   ...' 1fr
+                /.5fr   1fr   1fr   auto  1fr;
+                align-items:center; /* чтобы надпись по центру была*/
+            }
+            .button_img {
+                grid-area: cbi;
+                height: 80px;
+                width: 80px;
+                /*vertical-align: middle; делает надпись по середине*/
+            }
+            .button_text {
+                grid-area: cbt;
+                font-size: 3.5rem;
+                color:white;
+            }
+    /*КОНЕЦ КНОПКИ*/
+    .footer{
+        grid-area: foo;
+        background-image: url(img/owl_footer.jpg);
+        background-size: 1000px 600px;
+
+    }
+        .footer_mobyle {
+            background-image: url(img/owl_footer.jpg);
+            background-size: 1000px 700px;
+            grid-area: foo_m;
+        height: 700px;
+        line-height: 3rem;
+        color: white;
+        display: grid;
+        grid-template: 
+        "f_m1" 500px 
+        "f_m2" 200px
+        /1fr ;
+        }
+            .f_m1 {grid-area: f_m1;
+                margin-left: 100px;
+                margin-top: 100px;
+                font-size: 2.5rem;
+                line-height: 2;
+            }
+                .f_m1 a {
+                    text-decoration: none;
+                    color: chartreuse;
+                }
+                .f_m1 a:hover {
+                    color: turquoise;
+                }
+            .footer_span_m { font-weight: 700; }     
+            .f_m2 { grid-area: f_m2;
+                font-size: 1.8rem;
+                height: 8px;
+                margin: 10px 0 0 50px;
+            }
+                .f_m2 a {
+                    text-decoration: none;
+                    color: chartreuse;
+                }
+                .f_m2 a:hover {
+                    color: turquoise;
+                }
+p { padding: 20px 80px 20px 80px;
+    /*line-height: 5.8rem ; расстояние между строчками*/
+}
+li { padding:0 20px 0 20px;
+    /*line-height: 5.8rem ; расстояние между строчками*/
+}
+h3 { text-align: center;}
+.notHeading {             
+    font-weight: 300;
+    letter-spacing: .5rem; /*расстояние между буквами*/
+    font-size: 4rem;
+    text-align: center;
+    margin: 0 40px 0 40px;
+    line-height: 5.8rem ; /*расстояние между строчками*/
+}
+a { 
+    text-decoration: none;
+}
+.blockInMobile {
+    display: none;
+} 
+} /*КОНЕЦ МЕДИА ЗАПРОСА НА ВСЮ МОБИЛЬНУЮ ВЕРСТКУ*/
+
+/*##############################################################################################
+###############################################################################################*/
+
+/*ДАЛЕЕ ДЛЯ ДЕСКТОПА*/
+
+@media only screen  
+and (min-device-width : 480px) 
+ {
+.blockInDesctop { /* убрали боковое меню*/
+display: none}
+body { 
+    background-color: white;
+    font-family: "oswald", "pangolin", "balsamiq", "pacifico", "lobster", "19689", Times, serif;
+    font-size: 1.5rem; /*было 4*/
+    font-weight: 100; /*700*/
+    letter-spacing: .2rem; /*расстояние между буквами*/
+    display: grid;
+    grid-template: 
+    'hat   hat' auto
+    'hi    hi' auto
+    'ser   ser' auto
+    'gam   gam' auto
+    'con   con' auto
+    'foo   foo' auto
+    /1fr   1fr;
+}
+    .hat { 
+        grid-area: hat;
+        height: 100px;
+        width: 100vw;
+        /*background-color:silver;*/
+        /*background-color: grey;*/
+        opacity: 0.8;
+        display: grid;
+        grid-template: 
+        '...   ...  ...   ...   ...  ...  ...  ...' 1fr
+        '...   h_h  h_g   h_c   h_f  ...  w_i  ...' 70px
+        '...   ...  ...   ...   ...  ...  ...  ...' 1fr
+        /.06fr .2fr .15fr .26fr .5fr .4fr 60px 0.2fr;
+        align-items: center;
+    }
+        .whatsapp_img {
+            grid-area: w_i;
+
+        }
+            .whatsapp_img img {
+                height: 70px;
+                margin-bottom: -1vw;
+
+            }
+        .hat a {
+            font-size: 1rem;
+            text-align: left;
+            color: black;
+        }
+            .hat_hi {
+                grid-area: h_h;
+            }
+            .hat_game {
+                grid-area: h_g;
+            }
+            .hat_consultation {
+                grid-area: h_c;
+            }
+            .hat_footer {
+                grid-area: h_f;
+            }
+    .hi{
+        grid-area: hi;
+        display: grid;
+        grid-template: 
+        '...    ...    ...  ...' 5vw
+        '...    hid    h_p  ...' auto
+        '...    hid    tfcs  ...' auto
+        /.05fr  .85fr   1fr .03fr;
+        margin: 0 0 10vw 0;
+    }
+        .hi_imgDesctop {
+            grid-area: hid;
+            width: 40vw;
+        }
+        .hi_p{
+            grid-area: h_p;
+            font-weight: 700;
+            font-size: 2.4rem;
+        }
+            .hi_p p {
+                margin: 3vw 0 3vw 0;
+            }
+        .takenFromClassServices {
+            grid-area: tfcs;
+            font-weight: 300;
+            font-size: 1.5rem;
+            margin: 0;
+        }    
+    .services{
+        grid-area: ser;
+        background-color: rgb(252, 248, 242);
+    }
+    .services p, ul {
+        font-size: 1.5rem;
+        margin: 5vw 10vw 5vw 10vw;
+        text-align: center;
+        list-style: none;
+    }
+    .services li::before {
+
+        content: " \2741";
+        padding-right: 4vw; /*так стабильней расстояние*/
+        margin-left: -100px;
+        color: crimson;
+    }
+    .game {
+        grid-area: gam;
+        /*max-width: 50vw;*/
+        /*background-color: rgb(252, 248, 242);*/
+        background: rgb(252, 248, 242)/*rgba(64, 224, 208, .3)*/;
+        margin: 2vw;
+        border-radius: 10px;
+        max-width: 98vw;
+        position: relative; /*для неподвижной стрелки*/
+    }
+    .gameBottom::after { /*это неподвижная стрелка*/
+        content: '';
+        width: 0;
+        height: 0;
+        display: block;
+        position: absolute;
+        z-index: 10;
+        border: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        margin-left: 13vw; /*-10*/
+        left: 50%;
+        border-top: 10px solid/* #337AB7*/ rgb(252, 248, 242);
+        bottom: -10px;
+    } /*конец неподвижной стрелки*/
+        .game_body_crutch {
+            display: grid;
+            grid-template:
+            'g_i   gp' auto
+            /*'g_i   a_d' auto*/
+            /.5fr   1fr ;
+            display: flex; /*выровнял по центру надпись*/
+            align-items: center;
+        }
+        .game_img {
+            grid-area: g_i;
+            width: 30vw;
+        }   
+        .game_p {
+            grid-area: gp;
+            text-align: center;
+            margin: 5vw;
+        }
+        /*СТРЕЛКА подвижная*/
+
+        .game_forArrow {
+            grid-area: a_d;
+            margin-left: 30vw;
+        }
+            .arrow-down {
+                margin: 30px;
+            }
+            
+            .arrow-down span {
+                display: block;
+                width: 20px; /*было 30*/
+                height: 20px; /*было 30*/
+                border-bottom: .3vw solid #337AB7;
+                border-right: .3vw solid/* #337AB7*/;
+                border-color: orange;
+                transform: rotate(45deg);
+                margin: -16px;
+                animation: arrow-down 2s infinite;
+            }
+            .arrow-down span:nth-child(2){
+                animation-delay: -0.2s;
+            }
+            .arrow-down span:nth-child(3){
+                animation-delay: -0.4s;
+            }
+            @keyframes arrow-down {
+                0%{
+                    opacity: 0;
+                    transform: rotate(45deg) translate(-20px,-20px);
+                }
+                50%{
+                    opacity: 1;
+                }
+                100%{
+                    opacity: 0;
+                    transform: rotate(45deg) translate(20px,20px);
+                }
+            }
+        /*КОНЕЦ СТРЕЛКИ*/
+        .game_bigDiv1 {
+            /*background: rgba(64, 224, 208, .3);*/
+            font-family: "19689";
+            border-radius: 10px;
+            margin-bottom: 4vw;
+            grid-area: g_bd1;
+            display: grid;
+            grid-template: 
+            'gd1   gd2' auto
+            /1fr   1fr;
+        }
+            .game_div1 {
+                grid-area: gd1;
+                margin: 0 0 0 3vw;
+            }
+                .game_div1_h {
+                    margin: 3vw 0 2vw 4vw;
+                }
+                    .game_heart {
+                        text-align: left;
+                        margin: 0;
+                        padding: 0;
+                    }
+                    .game_heart li {
+                        margin: 0 2vw 1.5vw 0;
+                        text-decoration: none;
+                    }
+                    .game_heart li::before {
+                        padding: 0 20px 0 20px;
+                        content: " \2764"; /*2764  2665*/
+                        padding-right: 2vw; /*так стабильней расстояние*/
+                        margin-left: -3vw;
+                        color: crimson;
+                    }
+            .game_div2 {
+                grid-area: gd2;
+                margin: 0 0 0 3vw;
+            }
+                .game_div2_h {
+                    margin: 3vw 0 2vw 3vw;
+                }
+                    .game_flower {
+                        text-align: left;
+                        margin: 0;
+                        padding: 0;
+                    }
+                    .game_flower li {
+                        margin: 0 2vw 1.5vw 0;
+                        text-decoration: none;
+                    }
+                    .game_flower li::before {
+                        padding: 0 20px 0 20px;
+                        content: " \2741"; /*2764  2665*/
+                        padding-right: 2vw; /*так стабильней расстояние*/
+                        margin-left: -120px;
+                        color: crimson;
+                    }
+        .game_bigDiv2 {
+            font-family: "19689";
+            /*background: rgba(64, 224, 208, .3);*/
+            border-radius: 10px;
+            grid-area: g_bd2;
+            display: grid;
+            grid-template: 
+            'gd3   gd3   gd4   gd4' auto
+            'gd5   gd5   gd5   gd5' auto
+            '...   cbw   cbw   ...' auto
+            '...   ...   ...   ...' 4vw
+            /1fr   15vw  15vw  1fr;
+        }
+            .game_div3 {
+                grid-area: gd3;
+                margin: 0;
+                display: grid;
+                grid-template:
+                'gd3h' 9vw
+                'gyg' auto
+                /1fr;
+            }
+                .game_div3_h {
+                    margin: 3vw 0 2vw 3vw;
+                    grid-area: gd3h;
+                }
+                .game_youWillGet {
+                    grid-area: gyg;
+                    display: grid;
+                    grid-template:
+                    'gyi1   gyp1' auto
+                    'gyi2   gyp2' auto
+                    'gyi3   gyp3' auto
+                    /.14fr   1fr;
+                }
+                    .game_youWillGet_img1 {
+                        grid-area: gyi1;
+                        height: 1.5rem;
+                        margin: 1vw 0 0 1.8vw;
+                    }
+                    .game_youWillGet_img2 {
+                        grid-area: gyi2;
+                        height: 1.5rem;
+                        margin: 1vw 0 0 1.3vw;
+                    }
+                    .game_youWillGet_img3 {
+                        grid-area: gyi3;
+                        height: 1.5rem;
+                        margin: 1vw 0 0 1.3vw;
+                    }
+                    .game_youWillGet_p1, .game_youWillGet_p2, .game_youWillGet_p3 {
+                        margin: 0 2vw 1.5vw 0;
+                    }
+                    .game_youWillGet_p1 {
+                        grid-area: gyp1;
+                    }
+                    .game_youWillGet_p2 {
+                        grid-area: gyp2;
+                    }
+                    .game_youWillGet_p3 {
+                        grid-area: gyp3;
+                    }
+            .game_div4 {
+                grid-area: gd4;
+                margin: 0 0 0 3vw;
+            }
+            .game_div4_h {
+                margin: 3vw 0 2vw 3vw;
+            }
+            .game_div4 ul {
+                list-style-position: outside !important;
+            }
+                .game_message {
+                    margin: 0;
+                    padding: 0;
+                    text-align: left;
+                }
+                    .game_message li {
+                        margin: 0 2vw 1.5vw 4vw;
+                    }
+                    .game_message li::before {
+
+                        content: " \2764"; /*2764 2665*/
+                       /* padding-right: 3.5vw; так стабильней расстояние*/
+                        color: crimson;
+                        margin-left: -4vw;
+                        margin-right: 2vw;
+                    }
+         
+            .game_div5 {
+                grid-area: gd5;
+            }
+                .game_div5_h {
+                    text-align: center;
+                    margin: 6vw 0 0 0;
+                }
+                .game_price {
+                    text-align: center;
+                    margin: 3vw 0 0 0;
+                    padding: 0;
+                }
+                .game_div5 p {
+                    text-align: center;
+                }
+    .consultation{
+        grid-area: con;
+        /*max-width: 50vw;*/
+        background: rgba(64, 224, 208, .3);
+        margin: 2vw;
+        border-radius: 10px;
+        min-height: 15vw;
+        position: relative; /*для неподвижной стрелки*/
+    }
+    .consultationBottom::after { /*это неподвижная стрелка*/
+        content: '';
+        width: 0;
+        height: 0;
+        display: block;
+        position: absolute;
+        z-index: 10;
+        border: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        margin-left: -1vw;
+        margin-top: -5vw;
+        left: 50%;
+        border-top: 10px solid/* #337AB7*/ rgba(64, 224, 208, .3);
+        bottom: -10px;
+    } /*конец неподвижной стрелки*/
+        .consultation_text {
+            grid-area: c_t;
+        }
+            .consultation_link {
+                grid-area: c_l;
+                text-align: center;
+            }
+                /*СТРЕЛКА
+                остальные настройки смотри 
+                выше в разделе game*/
+                .consultation_forArrow {
+                    grid-area: c_ar;
+                    margin: 1vw 0 0 45.8vw;
+                } /*КОНЕЦ СТРЕЛКИ*/
+            .consultation_hidingBlock {
+                font-family: "19689";
+            }
+            .consultation_p {
+                margin-left: -9vw;
+                margin-top: 9vw;
+            }
+                .consultationMAK {
+                    color: red;
+                    margin-left: 7vw;
+                }
+            .consultationMAK_it {
+                margin: 5vw;
+            }
+                .consultationMAK_2 {
+                    color: red;
+                }
+            .consultation_MAKsymbols {
+                text-align: center;
+            }
+            .consultation_text ul {
+                margin: 3vw 4vw 3vw 4vw;
+                list-style: none;
+                text-align: left;
+            }
+            .consultation li::before {
+
+                content: " \2741";
+                margin-right: 2vw;
+                color: crimson;
+            }
+            .consultation_crutch {
+                display: grid;
+                grid-template: 
+                '... cbw ...' auto
+                /1fr 1fr 1fr;
+                margin-bottom: 3vw;
+            }
+                .consultation p {
+                    text-align: center;
+                }
+                .fuck {
+                    margin-left: 4vw;
+                }
+    .footer{
+        grid-area: foo;
+        background-image: url(img/owl_footer.jpg);
+        background-size: 100vw 80vh;
+    }
+        .footer p {
+            color: white;
+        }
+        .f_m1 {
+            margin: 5vw 0 7vw 15vw;
+        }
+        .f_m2 {
+            margin: 10vw 0 2vw 10vw;
+            font-size: .75rem;
+        }
+         .footer a {
+             color: chartreuse;
+         }
+/*КНОПКА*/            
+.buttonWhatsApp {
+    grid-area: cbw;
+    width: 30vw;
+}
+.buttonWhatsApp a {
+    text-decoration: none;
+}
+    .button {
+        /* width: 80vw;*/
+        border-radius: 30px;
+        font-size: 2rem;
+        /*margin-bottom: 3rem;*/
+        background-color: rgb(67, 216, 84);
+        height: 7vw;
+        display: grid;
+        grid-template:
+        '...   ...   ...   ...   ...' 1fr
+        '...   cbi   ...   cbt   ...' 10fr
+        '...   ...   ...   cbt   ...' 1fr
+        /.5fr   1fr   1fr   auto  1fr;
+        align-items:center; /* чтобы надпись по центру была*/
+    }
+    .button_img {
+        grid-area: cbi;
+        height: 4vw;
+        /*vertical-align: middle; делает надпись по середине*/
+    }
+    .button_text {
+        grid-area: cbt;
+        font-size: 1.5rem;
+        color:white;
+    }
+/*КОНЕЦ КНОПКИ*/
+    .notHeading {             
+        font-weight: 300;
+        letter-spacing: .3rem; /*расстояние между буквами*/
+        font-size: 2rem;
+    }
+    a {
+        text-decoration: none;
+    }
+
+} /*КОНЕЦ ДЕСКТОПА*/
